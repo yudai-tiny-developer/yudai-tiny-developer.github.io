@@ -1,12 +1,15 @@
 # Yudai the Tiny Developer
 
-## <img src="https://github.com/yudai-tiny-developer/filter/raw/615754e4e241895e4bd29ff13ed41429cbdd54fa/icons/128.png" width="32"> [Filter for YouTube](https://github.com/yudai-tiny-developer/filter)
+## <img src="https://github.com/yudai-tiny-developer/filter/raw/615754e4e241895e4bd29ff13ed41429cbdd54fa/icons/128.png" width="32"> [Filter for YouTube](https://chrome.google.com/webstore/detail/filter-for-youtube/jpdngflnlekafjhdlcnijphhcmeibdoa)
 * This extension provides an experience similar to the filters on the YouTube home screen for subscriptions and libraries.
 * YouTubeのホーム画面にあるフィルターと似たエクスペリエンスを、登録チャンネルやライブラリでも提供するChrome拡張機能です。
+* [GitHub repository](https://github.com/yudai-tiny-developer/filter)
 <img src="img/filter/Screenshot.png" width="640">
 
-## [Auto close chat for YouTube](https://github.com/yudai-tiny-developer/auto-close-chat)
+## Auto close chat for YouTube
 * YouTubeのチャット、チャットリプレイの初期状態を非表示にするChrome拡張機能です。
+* [GitHub repository](https://github.com/yudai-tiny-developer/auto-close-chat)
 
-## [Sum Time Playlist](https://github.com/yudai-tiny-developer/sum-time-playlist)
+## [Sum Time Playlist](https://yudai-tiny-developer.github.io/sum-time-playlist/)
 * YouTubeの公開プレイリストの合計時間を計算するサンプルコードです。
+* [GitHub repository](https://github.com/yudai-tiny-developer/sum-time-playlist)
