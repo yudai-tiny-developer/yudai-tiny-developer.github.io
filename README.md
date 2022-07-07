@@ -4,7 +4,7 @@
 * "Filter for YouTube" provides an experience similar to the filters on the YouTube home screen to subscriptions and so on.
 * YouTubeのホーム画面にあるフィルターと似たエクスペリエンスを、登録チャンネルなどに提供するChrome拡張機能です。
 * [GitHub repository](https://github.com/yudai-tiny-developer/filter)
-<img src="img/filter/en.png" width="640">
+<img src="img/filter/Screenshot.png" width="640">
 
 ## Auto close chat for YouTube
 * YouTubeのチャット、チャットリプレイの初期状態を非表示にするChrome拡張機能です。
