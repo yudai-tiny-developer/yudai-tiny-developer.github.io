@@ -1,4 +1,4 @@
-# Yudai the Tiny Developer
+# ytd://
 
 ## <img src="https://github.com/yudai-tiny-developer/filter/raw/615754e4e241895e4bd29ff13ed41429cbdd54fa/icons/128.png" width="32"> [Filter for YouTube](https://chrome.google.com/webstore/detail/filter-for-youtube/jpdngflnlekafjhdlcnijphhcmeibdoa)
 * "Filter for YouTube" provides an experience similar to the filters on the YouTube home screen to subscriptions and so on.
