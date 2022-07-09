@@ -5,6 +5,7 @@
 * **[Chrome 拡張機能]** サブスクリプションやライブラリなどに、YouTubeホーム画面のフィルターと同様のエクスペリエンスを提供します。
 * [GitHub repository](https://github.com/yudai-tiny-developer/filter)
 <img src="img/filter/Screenshot.png" width="640">
+<img src="img/filter/Screenshot2.png" width="640">
 
 ## Auto close chat for YouTube
 * **[Chrome 拡張機能]** YouTubeのチャット、チャットリプレイの初期状態を非表示にするChrome拡張機能です。
