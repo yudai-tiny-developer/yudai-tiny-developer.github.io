@@ -20,7 +20,7 @@
 * フィルター：すべて通知、カスタマイズされた通知、通知なし
 * キーワード検索（フィルターと併用可能）
 
-## Auto close chat for YouTube
+## Auto close chat for YouTube（開発中）
 
 * **[Chrome 拡張機能]** YouTubeのチャット、チャットリプレイの初期状態を非表示にするChrome拡張機能です。
 * [GitHub repository](https://github.com/yudai-tiny-developer/auto-close-chat)
