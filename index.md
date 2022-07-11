@@ -28,4 +28,4 @@ title: "Filter for YouTube"
 * [GitHub repository](https://github.com/yudai-tiny-developer/filter)
 
 ## テクノロジー
-* YouTube Data API を使わず DOM の操作のみで機能を実現することで高速なレスポンスを実現しています。
+* YouTube Data API を使わず DOM の操作のみで機能を実現することで、高速なレスポンスを提供しています。
