@@ -5,7 +5,7 @@ title: "Filter for YouTube"
 # <img src="https://github.com/yudai-tiny-developer/filter/raw/615754e4e241895e4bd29ff13ed41429cbdd54fa/icons/128.png" width="32" style="vertical-align: text-top;"> [Download (Chrome Web Store)](https://chrome.google.com/webstore/detail/filter-for-youtube/jpdngflnlekafjhdlcnijphhcmeibdoa)
 
 * **[Chrome extension]** Provide an experience similar to the filters on YouTube home screen to subscriptions, library, and so on.
-* **[Chrome 拡張機能]** 登録チャンネルやライブラリなどに、YouTube ホーム画面のフィルターと同様のエクスペリエンスを提供します。
+* **[Chrome 拡張機能]** 登録チャンネルやライブラリなどに、YouTube ホーム画面のフィルターと似たエクスペリエンスを提供します。
 
 
 ## 登録チャンネル、ライブラリ、再生リスト
