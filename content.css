@@ -11,6 +11,30 @@ h1.title {
     border-color: black;
 }
 
+div.body {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+div.toc {
+    position: sticky;
+    top: 128px;
+    margin-right: 32px;
+}
+
+@media (max-width: 1599px) {
+    div.toc {
+        display: none;
+    }
+}
+
+div.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 div.item {
     display: flex;
     flex-direction: column;
@@ -47,6 +71,33 @@ div.images {
 img.image {
     width: 640px;
     height: 400px;
+}
+
+div.desc pre {
+    font-size: large;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 1343px) {
+    div.item {
+        width: 960px;
+    }
+
+    img.image {
+        width: 480px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 1023px) {
+    div.item {
+        width: 640px;
+    }
+
+    img.image {
+        width: 320px;
+        height: 200px;
+    }
 }
 
 div.footer {

@@ -2,141 +2,221 @@
 
 <head>
     <link rel="stylesheet" href="content.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let toc = '<ol class="toc">';
+            for (const h of document.querySelectorAll('h2.title')) {
+                toc += `<li><a href="#${h.id}">${h.getElementsByTagName('a')[0].textContent}</a></li>`;
+            }
+            toc += '</ol>';
+
+            document.querySelector('div.toc').innerHTML = toc;
+        });
+    </script>
+    <title>Simple and Tiny Utilities Chrome Extensions</title>
 </head>
 
 <body>
-    <h1 class="title">Chrome Extensions</h1>
-
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="filter/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa">Subscription Feed Filter for YouTube</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/filter">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="filter/desc.png" />
-            <img class="image" src="filter/settings.png" />
+    <h1 class="title">Simple and Tiny Utilities Chrome Extensions</h1>
+    <div class="body">
+        <div class="toc"></div>
+        <div class="items">
+            <div class="item">
+                <h2 class="title" id="filter">
+                    <img class="icon" src="filter/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa">Subscription Feed Filter for YouTube</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/filter">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="filter/desc.png" />
+                    <img class="image" src="filter/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+Filters such as Live, Streamed, Video, and Keyword search can be added to Subscriptions, Playlists, and other YouTube pages.
+Provides a filter like YouTube home screen on pages such as subscriptions and libraries.
+Filters: Live, Streamed, Video, Shorts, Scheduled, Notification on, Notification off, Unwatched, Watched
+Keyword search: It can be combined with other filters.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="live-catch-up">
+                    <img class="icon" src="live-catch-up/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp">YouTube Live Stream Latency Mitigator</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/live-catch-up">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="live-catch-up/desc.png" />
+                    <img class="image" src="live-catch-up/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension syncs YouTube live streams in real-time by accelerating viewer-delayed streams caused by data reception delays.
+A DVR-enabled YouTube live stream will experience delays between the broadcaster's delivery time and the viewer's time if there is a delay in receiving data at the viewer's client. This extension temporarily speeds up delayed YouTube live streams to keep the live stream real-time.
+Enabling active mode will reduce latency for all live broadcasts, regardless of whether DVR is enabled or disabled. However, since this feature consumes the buffer as much as possible, so live streams may frequently pause.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="auto-pan">
+                    <img class="icon" src="auto-pan/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf">Auto Pan by Window Position</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/auto-pan">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="auto-pan/desc.png" />
+                    <img class="image" src="auto-pan/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension controls audio panning, enabling sound to be heard from the left when the window is positioned to the left of the display's center and from the right when it's on the right side.
+It may not function on sites with CORS configured.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="ingle-line-chat">
+                    <img class="icon" src="single-line-chat/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn">Improve YouTube Live Chat</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/single-line-chat">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="single-line-chat/desc.png" />
+                    <img class="image" src="single-line-chat/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension provides the following features to improve YouTube live chat:
+- Displays each message in a single line. This ensures that even long messages spanning multiple lines take up uniform space. Hovering over a message will display its full content as usual.
+- Hides icons, names, and badges from messages.
+- Differentiates message text and background colors based on user type: general users, members, moderators, and owners.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="tap-volume">
+                    <img class="icon" src="tap-volume/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl">YouTube Volume Control</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-volume">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="tap-volume/desc.png" />
+                    <img class="image" src="tap-volume/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension adds a button to YouTube videos that allows you to change the volume with touch operations.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="tap-quality">
+                    <img class="icon" src="tap-quality/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg">YouTube Playback Quality Control</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-quality">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="tap-quality/desc.png" />
+                    <img class="image" src="tap-quality/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="tap-rate">
+                    <img class="icon" src="tap-rate/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl">YouTube Playback Rate Control</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-rate">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="tap-rate/desc.png" />
+                    <img class="image" src="tap-rate/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="pin-bottom">
+                    <img class="icon" src="pin-bottom/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj">Pin YouTube Control</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/pin-bottom">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="pin-bottom/desc.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension adds a button to pin the YouTube controls.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="jump-time">
+                    <img class="icon" src="jump-time/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo">Seek to Timecode Control for YouTube</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/jump-time">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="jump-time/desc.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode
+This extension allows you to edit the current time of YouTube videos, enabling you to seek to specific timecodes by inputting them.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="tap-thumbnail">
+                    <img class="icon" src="tap-thumbnail/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca">YouTube Thumbnail Button</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-thumbnail">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="tap-thumbnail/desc.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension adds a button to YouTube videos that allows you to open the thumbnail with touch operations.
+            </pre>
+                </div>
+            </div>
+            <div class="item">
+                <h2 class="title" id="yt-simplify">
+                    <img class="icon" src="yt-simplify/128.png" />
+                    <a class="name" href="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi">Simplify YouTube</a>
+                    <div class="separator"></div>
+                    <a class="github" href="https://github.com/yudai-tiny-developer/yt-simplify">GitHub</a>
+                </h2>
+                <div class="images">
+                    <img class="image" src="yt-simplify/desc.png" />
+                    <img class="image" src="yt-simplify/settings.png" />
+                </div>
+                <div class="desc">
+                    <pre>
+This extension hides some buttons from the YouTube controls.
+            </pre>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="live-catch-up/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp">YouTube Live Stream Latency Mitigator</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/live-catch-up">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="live-catch-up/desc.png" />
-            <img class="image" src="live-catch-up/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="auto-pan/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf">Auto Pan by Window Position</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/auto-pan">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="auto-pan/desc.png" />
-            <img class="image" src="auto-pan/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="single-line-chat/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn">Improve YouTube Live Chat</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/single-line-chat">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="single-line-chat/desc.png" />
-            <img class="image" src="single-line-chat/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="tap-volume/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl">YouTube Volume Control</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/tap-volume">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="tap-volume/desc.png" />
-            <img class="image" src="tap-volume/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="tap-quality/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg">YouTube Playback Quality Control</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/tap-quality">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="tap-quality/desc.png" />
-            <img class="image" src="tap-quality/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="tap-rate/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl">YouTube Playback Rate Control</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/tap-rate">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="tap-rate/desc.png" />
-            <img class="image" src="tap-rate/settings.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="pin-bottom/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj">Pin YouTube Control</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/pin-bottom">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="pin-bottom/desc.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="jump-time/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo">Seek to Timecode Control for YouTube</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/jump-time">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="jump-time/desc.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="tap-thumbnail/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca">YouTube Thumbnail Button</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/tap-thumbnail">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="tap-thumbnail/desc.png" />
-        </div>
-    </div>
-    <div class="item">
-        <h2 class="title">
-            <img class="icon" src="yt-simplify/128.png" />
-            <a class="name" href="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi">Simplify YouTube</a>
-            <div class="separator"></div>
-            <a class="github" href="https://github.com/yudai-tiny-developer/yt-simplify">GitHub</a>
-        </h2>
-        <div class="images">
-            <img class="image" src="yt-simplify/desc.png" />
-            <img class="image" src="yt-simplify/settings.png" />
-        </div>
-    </div>
-
     <div class="footer">©2025 Simple and Tiny Utilities</div>
 </body>
 
