@@ -5,6 +5,12 @@ body {
     align-items: center;
 }
 
+h1.title {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: black;
+}
+
 div.item {
     display: flex;
     flex-direction: column;
@@ -12,7 +18,7 @@ div.item {
     margin-bottom: 128px;
 }
 
-h1.title {
+h2.title {
     display: flex;
     align-items: center;
     font-size: x-large;
@@ -41,4 +47,10 @@ div.images {
 img.image {
     width: 640px;
     height: 400px;
+}
+
+div.footer {
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: black;
 }
