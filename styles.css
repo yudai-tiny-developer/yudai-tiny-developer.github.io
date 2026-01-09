@@ -63,12 +63,18 @@ body {
   position: fixed;
   inset: 0;
   z-index: 1000;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
 }
 
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, .55);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
 }
 
 .modal-box {
