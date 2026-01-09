@@ -115,7 +115,7 @@ body {
   border: 1px solid #ddd;
   background: #fff;
   display: block;
-  margin: 0 auto 16px;
+  margin: 16px auto 16px;
 }
 
 .modal-box h2 {
