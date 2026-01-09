@@ -1,27 +1,15 @@
 This extension brings filter options similar to those on the YouTube home screen to pages like Subscriptions and Library.
 
 <Filters>
-
 The following filters are available:
-- Live
-- Streamed
-- Videos
-- Shorts
-- Scheduled
-- Notifications On
-- Notifications Off
-- Unwatched
-- Watched
+- Live, Streamed, Videos, Shorts, Scheduled, Notifications On, Notifications Off
+- Unwatched, Watched
 
 By enabling multi-selection in the settings, you can combine multiple filters. For example, selecting both "Live" and "Streamed" will display videos that are either live or have already been streamed.
-
 You can also customize the order and display names of the filters in the settings.
 
-
 <Keyword Search>
-
 You can filter videos using keywords. For example, entering "News" will display videos with "News" in the title.
-
 Keyword search also supports filtering in the Sidebar Subscriptions, Notifications, and Save to playlist sections.
 
 Supported Platform: YouTube.com
