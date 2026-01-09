@@ -150,3 +150,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
+#modal-desc {
+  white-space: pre-line;
+}
