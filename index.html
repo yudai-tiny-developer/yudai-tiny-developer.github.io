@@ -2,347 +2,193 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="content.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let toc = '<ol class="toc">';
-            for (const h of document.querySelectorAll('h2.title')) {
-                toc += `<li><a href="#${h.id}">${h.getElementsByTagName('a')[0].textContent}</a></li>`;
-            }
-            toc += '</ol>';
-
-            document.querySelector('div.toc').innerHTML = toc;
-        });
-    </script>
-    <title>Simple and Tiny Utilities Chrome Extensions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Simple and Tiny Utilities</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1 class="title">Simple and Tiny Utilities Chrome Extensions</h1>
-    <div class="body">
-        <div class="toc"></div>
-        <div class="items">
-            <div class="item">
-                <div class="desc">
-                    <pre>
-I develop and release tiny tools that you can easily live without, but that can be a little convenient to have.
-I have no intention of charging money for the use of the product, displaying advertisements, or soliciting donations.
-                    </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="filter">
-                    <img class="icon" src="filter/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa">Subscription Feed Filter for YouTube</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/filter">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="filter/desc.png" />
-                    <img class="image" src="filter/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension brings filter options similar to those on the YouTube home screen to pages like Subscriptions and Library.
-
-&lt;Filters&gt;
-
-The following filters are available:
-- Live
-- Streamed
-- Videos
-- Shorts
-- Scheduled
-- Notifications On
-- Notifications Off
-- Unwatched
-- Watched
-
-By enabling multi-selection in the settings, you can combine multiple filters. For example, selecting both "Live" and "Streamed" will display videos that are either live or have already been streamed.
-
-You can also customize the order and display names of the filters in the settings.
-
-
-&lt;Keyword Search&gt;
-
-You can filter videos using keywords. For example, entering "News" will display videos with "News" in the title.
-
-Keyword search also supports filtering in the Sidebar Subscriptions, Notifications, and Save to playlist sections.
-
-Supported Platform: YouTube.com
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="live-catch-up">
-                    <img class="icon" src="live-catch-up/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp">YouTube Live Stream Latency Mitigator</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/live-catch-up">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="live-catch-up/desc.png" />
-                    <img class="image" src="live-catch-up/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension temporarily increases the playback speed of YouTube live streams with DVR enabled when a delay is detected (i.e., the red "LIVE" indicator turns gray), helping you catch up to real time.
-
-When "Aggressive mode" is enabled in the settings, the extension continues increasing playback speed to catch up to real time as long as there is buffer, even if YouTube has not detected a delay. Aggressive mode also works on YouTube live streams where DVR is disabled.
-
-Additional features include:
-- Displaying the current playback speed
-- Displaying the number of seconds delayed
-- Displaying the remaining buffer size
-- Predicting and showing the time you will catch up to real time at the current speed
-- Displaying the elapsed time of the live stream
-- Copying the current timestamp to the clipboard by clicking the elapsed time display
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-                    </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="auto-pan">
-                    <img class="icon" src="auto-pan/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf">Auto Pan by Window Position</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/auto-pan">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="auto-pan/desc.png" />
-                    <img class="image" src="auto-pan/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension controls audio panning, enabling sound to be heard from the left when the window is positioned to the left of the display's center and from the right when it's on the right side.
-It may not function on sites with CORS configured.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex), X (formerly Twitter)
-CAUTION: On Twitch, the audio may become muted.
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="single-line-chat">
-                    <img class="icon" src="single-line-chat/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn">Improve YouTube Live Chat</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/single-line-chat">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="single-line-chat/desc.png" />
-                    <img class="image" src="single-line-chat/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension provides the following features to improve YouTube live chat:
-
-- Displays each message in a single line. This ensures that even long messages spanning multiple lines take up uniform space. Hovering over a message will display its full content as usual.
-- Hides icons, sender names, badges, and XP from messages.
-- Differentiates message text and background colors based on user type: general users, members, moderators, and owners.
-
-Supported Platforms: YouTube.com, Holodex
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="tap-volume">
-                    <img class="icon" src="tap-volume/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl">YouTube Volume Control</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-volume">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="tap-volume/desc.png" />
-                    <img class="image" src="tap-volume/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to YouTube videos that allows you to change the volume with touch operations.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="tap-quality">
-                    <img class="icon" src="tap-quality/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg">YouTube Playback Quality Control</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-quality">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="tap-quality/desc.png" />
-                    <img class="image" src="tap-quality/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="tap-rate">
-                    <img class="icon" src="tap-rate/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl">YouTube Playback Rate Control</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-rate">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="tap-rate/desc.png" />
-                    <img class="image" src="tap-rate/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="pin-bottom">
-                    <img class="icon" src="pin-bottom/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj">Pin YouTube Control</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/pin-bottom">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="pin-bottom/desc.png" />
-                    <img class="image" src="pin-bottom/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to pin the YouTube controls.
-By turning on the optional "Reserve space to display the controls," you can separate the YouTube controls from the video area.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="jump-time">
-                    <img class="icon" src="jump-time/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo">Seek to Timecode Control for YouTube</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/jump-time">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="jump-time/desc.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode
-This extension allows you to edit the current time of YouTube videos, enabling you to seek to specific timecodes by inputting them.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="tap-thumbnail">
-                    <img class="icon" src="tap-thumbnail/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca">YouTube Thumbnail Button</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/tap-thumbnail">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="tap-thumbnail/desc.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to YouTube videos that allows you to open the thumbnail with touch operations.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="yt-simplify">
-                    <img class="icon" src="yt-simplify/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi">Simplify YouTube</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/yt-simplify">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="yt-simplify/desc.png" />
-                    <img class="image" src="yt-simplify/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension hides some buttons from the YouTube controls.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="post-screenshot">
-                    <img class="icon" src="post-screenshot/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo">Quick Post ScreenShot</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/post-screenshot">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="post-screenshot/desc.png" />
-                    <img class="image" src="post-screenshot/settings.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-Clicking the extension icon instantly opens the X (formerly Twitter) post editor with a screenshot of the video attached.
-
-It is mainly intended for posting screenshots to support livestreams you are watching, such as YouTube Live broadcasts. To minimize disruption while watching a livestream, it is designed to allow you to post a screenshot instantly without cumbersome operations.
-
-- If the window title contains a hashtag, it will be reflected in the post text.
-- The post will be made from the account currently logged in.
-- When enabled, the post page can be opened in a popup window instead of a tab.
-- When enabled, image quality can be set to high (compression setting 1.0) instead of the default (compression setting 0.85).
-- When enabled, screenshots can be downloaded.
-- When enabled, you can fine-tune actions such as stepping back before posting a screenshot (only on supported platforms).
-- By setting shortcut keys, you can also operate it using the keyboard.
-- Posting recorded videos is also supported.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex), Twitch
-            </pre>
-                </div>
-            </div>
-            <div class="item">
-                <h2 class="title" id="pretend-not-to-watch">
-                    <img class="icon" src="pretend-not-to-watch/128.png" />
-                    <a class="name"
-                       href="https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc">Remove from watch history button for YouTube Player</a>
-                    <div class="separator"></div>
-                    <a class="github" href="https://github.com/yudai-tiny-developer/pretend-not-to-watch">GitHub</a>
-                </h2>
-                <div class="images">
-                    <img class="image" src="pretend-not-to-watch/desc.png" />
-                </div>
-                <div class="desc">
-                    <pre>
-This extension adds a button to YouTube video pages that allows you to remove the video from your watch history. If you don't like a video and don't want it to remain in your watch history, you can remove it directly from the video page without having to go to the history page.
-
-Supported Platforms: YouTube.com
-            </pre>
-                </div>
-            </div>
-        </div>
+  <header class="header">
+    <h1>Simple and Tiny Utilities</h1>
+    <p>I develop and release tiny tools that you can easily live without, but that can be a little convenient to have.</p>
+    <p>I have no intention of charging money for the use of the product, displaying advertisements, or soliciting donations.</p>
+  </header>
+  <main class="main-content">
+    <section class="extension-card"
+             data-title="Subscription Feed Filter for YouTube"
+             data-desc-file="filter/descriptions.txt"
+             data-img="filter/desc.png,filter/settings.png"
+             data-store="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa"
+             data-github="https://github.com/yudai-tiny-developer/filter">
+      <img src="filter/128.png" alt="">
+      <div class="content">
+        <h2>Subscription Feed Filter for YouTube</h2>
+        <p>Filters such as Live, Streamed, Video, and Keyword search can be added to Subscriptions, Playlists, and other YouTube pages.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="YouTube Live Stream Latency Mitigator"
+             data-desc-file="live-catch-up/descriptions.txt"
+             data-img="live-catch-up/desc.png,live-catch-up/settings.png"
+             data-store="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp"
+             data-github="https://github.com/yudai-tiny-developer/live-catch-up">
+      <img src="live-catch-up/128.png" alt="">
+      <div class="content">
+        <h2>YouTube Live Stream Latency Mitigator</h2>
+        <p>This extension syncs YouTube live streams in real-time by accelerating viewer-delayed streams caused by data reception delays.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Auto Pan by Window Position"
+             data-desc-file="auto-pan/descriptions.txt"
+             data-img="auto-pan/desc.png,auto-pan/settings.png"
+             data-store="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf"
+             data-github="https://github.com/yudai-tiny-developer/auto-pan">
+      <img src="auto-pan/128.png" alt="">
+      <div class="content">
+        <h2>Auto Pan by Window Position</h2>
+        <p>This extension enables audio panning to the left or right based on the window's position relative to the display center.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Improve YouTube Live Chat"
+             data-desc-file="single-line-chat/descriptions.txt"
+             data-img="single-line-chat/desc.png,single-line-chat/settings.png"
+             data-store="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn"
+             data-github="https://github.com/yudai-tiny-developer/single-line-chat">
+      <img src="single-line-chat/128.png" alt="">
+      <div class="content">
+        <h2>Improve YouTube Live Chat</h2>
+        <p>This extension provides the features to improve YouTube live chat.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="YouTube Volume Control"
+             data-desc-file="tap-volume/descriptions.txt"
+             data-img="tap-volume/desc.png,tap-volume/settings.png"
+             data-store="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl"
+             data-github="https://github.com/yudai-tiny-developer/tap-volume">
+      <img src="tap-volume/128.png" alt="">
+      <div class="content">
+        <h2>YouTube Volume Control</h2>
+        <p>This extension adds a button to YouTube videos that allows you to change the volume with touch operations.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="YouTube Playback Quality Control"
+             data-desc-file="tap-quality/descriptions.txt"
+             data-img="tap-quality/desc.png,tap-quality/settings.png"
+             data-store="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg"
+             data-github="https://github.com/yudai-tiny-developer/tap-quality">
+      <img src="tap-quality/128.png" alt="">
+      <div class="content">
+        <h2>YouTube Playback Quality Control</h2>
+        <p>This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="YouTube Playback Rate Control"
+             data-desc-file="tap-rate/descriptions.txt"
+             data-img="tap-rate/desc.png,tap-rate/settings.png"
+             data-store="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl"
+             data-github="https://github.com/yudai-tiny-developer/tap-rate">
+      <img src="tap-rate/128.png" alt="">
+      <div class="content">
+        <h2>YouTube Playback Rate Control</h2>
+        <p>This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Pin YouTube Control"
+             data-desc-file="pin-bottom/descriptions.txt"
+             data-img="pin-bottom/desc.png,pin-bottom/settings.png"
+             data-store="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj"
+             data-github="https://github.com/yudai-tiny-developer/pin-bottom">
+      <img src="pin-bottom/128.png" alt="">
+      <div class="content">
+        <h2>Pin YouTube Control</h2>
+        <p>This extension adds a button to pin the YouTube controls.</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Seek to Timecode Control for YouTube"
+             data-desc-file="jump-time/descriptions.txt"
+             data-img="jump-time/desc.png"
+             data-store="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo"
+             data-github="https://github.com/yudai-tiny-developer/jump-time">
+      <img src="jump-time/128.png" alt="">
+      <div class="content">
+        <h2>Seek to Timecode Control for YouTube</h2>
+        <p>An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="YouTube Thumbnail Button"
+             data-desc-file="tap-thumbnail/descriptions.txt"
+             data-img="tap-thumbnail/desc.png"
+             data-store="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca"
+             data-github="https://github.com/yudai-tiny-developer/tap-thumbnail">
+      <img src="tap-thumbnail/128.png" alt="">
+      <div class="content">
+        <h2>YouTube Thumbnail Button</h2>
+        <p>Button to show the YouTube thumbnail</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Simplify YouTube"
+             data-desc-file="yt-simplify/descriptions.txt"
+             data-img="yt-simplify/desc.png,yt-simplify/settings.png"
+             data-store="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi"
+             data-github="https://github.com/yudai-tiny-developer/yt-simplify">
+      <img src="yt-simplify/128.png" alt="">
+      <div class="content">
+        <h2>Simplify YouTube</h2>
+        <p>Simplify YouTube Control</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Quick Post ScreenShot"
+             data-desc-file="post-screenshot/descriptions.txt"
+             data-img="post-screenshot/desc.png,post-screenshot/settings.png"
+             data-store="https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo"
+             data-github="https://github.com/yudai-tiny-developer/post-screenshot">
+      <img src="post-screenshot/128.png" alt="">
+      <div class="content">
+        <h2>Quick Post ScreenShot</h2>
+        <p>Supports posting video screenshots to X</p>
+      </div>
+    </section>
+    <section class="extension-card"
+             data-title="Remove from watch history button for YouTube Player"
+             data-desc-file="pretend-not-to-watch/descriptions.txt"
+             data-img="pretend-not-to-watch/desc.png"
+             data-store="https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc"
+             data-github="https://github.com/yudai-tiny-developer/pretend-not-to-watch">
+      <img src="pretend-not-to-watch/128.png" alt="">
+      <div class="content">
+        <h2>Remove from watch history button for YouTube Player</h2>
+        <p>This extension adds a button to YouTube Player that removes the view of current video from your watch history.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2022-2026 Simple and Tiny Utilities</p>
+  </footer>
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <button class="modal-close">×</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-images" class="modal-images"></div>
+      <p id="modal-desc"></p>
+      <div class="modal-links">
+        <a id="modal-store" target="_blank">Chrome Web Store</a>
+        <a id="modal-github" target="_blank">GitHub</a>
+      </div>
     </div>
-    <div class="footer">©2025 Simple and Tiny Utilities<br><a href="https://x.com/TinyDevelo83274">@TinyDevelo83274</a></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

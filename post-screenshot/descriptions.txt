@@ -1,0 +1,14 @@
+Clicking the extension icon instantly opens the X (formerly Twitter) post editor with a screenshot of the video attached.
+
+It is mainly intended for posting screenshots to support livestreams you are watching, such as YouTube Live broadcasts. To minimize disruption while watching a livestream, it is designed to allow you to post a screenshot instantly without cumbersome operations.
+
+- If the window title contains a hashtag, it will be reflected in the post text.
+- The post will be made from the account currently logged in.
+- When enabled, the post page can be opened in a popup window instead of a tab.
+- When enabled, image quality can be set to high (compression setting 1.0) instead of the default (compression setting 0.85).
+- When enabled, screenshots can be downloaded.
+- When enabled, you can fine-tune actions such as stepping back before posting a screenshot (only on supported platforms).
+- By setting shortcut keys, you can also operate it using the keyboard.
+- Posting recorded videos is also supported.
+
+Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex), Twitch

@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+.header {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-content {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 24px;
+}
+
+.extension-card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.extension-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .12);
+}
+
+.extension-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.footer {
+  text-align: center;
+  color: #777;
+  padding: 30px 10px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+}
+
+.modal-box {
+  position: relative;
+  max-width: 800px;
+  background: #fff;
+  margin: 8vh auto;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+  animation: fadeUp .25s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.modal-images {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.modal-images img {
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.modal-box p {
+  font-size: .95rem;
+  margin-bottom: 16px;
+}
+
+.modal-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.modal-links a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #0066ff;
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.modal-links a:last-child {
+  background: #24292f;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
