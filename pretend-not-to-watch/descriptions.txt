@@ -1,3 +1,0 @@
-This extension adds a button to YouTube video pages that allows you to remove the video from your watch history. If you don't like a video and don't want it to remain in your watch history, you can remove it directly from the video page without having to go to the history page.
-
-Supported Platforms: YouTube.com
