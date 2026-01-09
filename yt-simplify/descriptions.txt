@@ -1,3 +1,0 @@
-This extension hides some buttons from the YouTube controls.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)

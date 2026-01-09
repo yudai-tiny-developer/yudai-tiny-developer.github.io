@@ -1,5 +1,0 @@
-This extension controls audio panning, enabling sound to be heard from the left when the window is positioned to the left of the display's center and from the right when it's on the right side.
-It may not function on sites with CORS configured.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex), X (formerly Twitter)
-CAUTION: On Twitch, the audio may become muted.

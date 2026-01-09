@@ -1,4 +1,0 @@
-An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode
-This extension allows you to edit the current time of YouTube videos, enabling you to seek to specific timecodes by inputting them.
-
-Supported Platforms: YouTube.com, YouTube Embedded Player (e.g. Holodex)

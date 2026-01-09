@@ -26,13 +26,7 @@ cards.forEach(card => {
       imgContainer.appendChild(img);
     });
 
-    try {
-      const res = await fetch(card.dataset.descFile);
-      const text = await res.text();
-      mDesc.textContent = text;
-    } catch {
-      mDesc.textContent = "";
-    }
+    mDesc.textContent = card.dataset.desc.replaceAll("\\n", "\n");
 
     modal.classList.remove("hidden");
   });

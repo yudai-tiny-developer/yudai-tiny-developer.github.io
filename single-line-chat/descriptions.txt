@@ -1,7 +1,0 @@
-This extension provides the following features to improve YouTube live chat:
-
-- Displays each message in a single line. This ensures that even long messages spanning multiple lines take up uniform space. Hovering over a message will display its full content as usual.
-- Hides icons, sender names, badges, and XP from messages.
-- Differentiates message text and background colors based on user type: general users, members, moderators, and owners.
-
-Supported Platforms: YouTube.com, Holodex
