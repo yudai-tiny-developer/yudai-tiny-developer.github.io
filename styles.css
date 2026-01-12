@@ -135,16 +135,32 @@ body {
 }
 
 .modal-links a {
+  display: block;
   padding: 10px 16px;
   border-radius: 999px;
-  background: #0066ff;
+  background: #24292f;
   color: #fff;
   text-decoration: none;
   font-size: .9rem;
 }
 
-.modal-links a:last-child {
-  background: #24292f;
+.modal-links a#modal-chrome-store {
+  background: #5B7DB1;
+  color: #fff;
+}
+
+.modal-links a#modal-firefox-addons {
+  background: #C06C4E;
+  color: #fff;
+}
+
+.modal-links a:modal-github {
+  background: #2E2E2E;
+  color: #fff;
+}
+
+.modal-links a[href="undefined"] {
+  display: none;
 }
 
 .modal-close {

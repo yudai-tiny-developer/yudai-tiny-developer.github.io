@@ -4,7 +4,8 @@ const modal = document.getElementById("modal");
 const mImg = document.getElementById("modal-img");
 const mTitle = document.getElementById("modal-title");
 const mDesc = document.getElementById("modal-desc");
-const mStore = document.getElementById("modal-store");
+const mChromeStore = document.getElementById("modal-chrome-store");
+const mFirefoxAddons = document.getElementById("modal-firefox-addons");
 const mGit = document.getElementById("modal-github");
 
 const imgContainer = document.getElementById("modal-images");
@@ -13,7 +14,8 @@ cards.forEach(card => {
   card.addEventListener("click", async () => {
 
     mTitle.textContent = card.dataset.title;
-    mStore.href = card.dataset.store;
+    mChromeStore.href = card.dataset.chromeStore;
+    mFirefoxAddons.href = card.dataset.firefoxAddons;
     mGit.href = card.dataset.github;
 
     imgContainer.innerHTML = "";
