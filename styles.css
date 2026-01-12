@@ -6,7 +6,7 @@
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-  background: #fafafa;
+  background: #eaeaea;
   color: #222;
 }
 
@@ -80,7 +80,7 @@ body {
 .modal-box {
   position: relative;
   max-width: 800px;
-  background: #fff;
+  background: #fafafa;
   margin: 8vh auto;
   padding: 28px;
   border-radius: 18px;
