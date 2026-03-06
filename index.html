@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      font-family: sans-serif;
       background: #e9e9e9;
       color: #292929;
     }
@@ -179,7 +179,7 @@
       position: absolute;
       top: 10px;
       right: 14px;
-      font-size: 22px;
+      font-size: 40px;
       background: none;
       border: none;
       cursor: pointer;
@@ -202,6 +202,29 @@
       margin-left: 2px;
       margin-right: 2px;
     }
+
+    .msg {
+      font-family: serif;
+      font-size: .8rem;
+    }
+
+    .feedback-form {
+      display: flex;
+      justify-content: right;
+      margin-right: 15%;
+    }
+
+    a {
+      color: #00d4ff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #00f9d4;
+    }
   </style>
 </head>
 
@@ -209,9 +232,14 @@
   <header class="header">
     <h1>Simple and Tiny Utilities</h1>
     <h2>Chrome Extensions and Firefox Add-ons</h2>
-    <p>I build and release tiny tools you can easily live without—but that are nice to have.</p>
-    <p>I don't plan to charge for using them, show ads in them, or ask for donations for their use.</p>
-    <p>My aim is to keep them simple and self-explanatory, focusing on single-purpose tools rather than bundling multiple features together.</p>
+    <div class="msg">
+      <p>I build and release tiny tools you can easily live without—but that are nice to have.</p>
+      <p>I don't plan to charge for using them, show ads in them, or ask for donations for their use.</p>
+      <p>My aim is to keep them simple and self-explanatory, focusing on single-purpose tools rather than bundling multiple features together.</p>
+    </div>
+    <div class="feedback-form">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSflBYT48KTuGFCTopkhoABzeHD6pL18CCa_WzWhsXvn2rwq_Q/viewform">Anonymous Feedback Form</a>
+    </div>
   </header>
   <main class="main-content">
     <section class="extension-card"
