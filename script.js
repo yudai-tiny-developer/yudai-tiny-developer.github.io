@@ -6,6 +6,7 @@ const mTitle = document.getElementById("modal-title");
 const mDesc = document.getElementById("modal-desc");
 const mChromeStore = document.getElementById("modal-chrome-store");
 const mFirefoxAddons = document.getElementById("modal-firefox-addons");
+const mWebsite = document.getElementById("modal-website");
 const mGit = document.getElementById("modal-github");
 
 const imgContainer = document.getElementById("modal-images");
@@ -20,6 +21,7 @@ cards.forEach(card => {
     mTitle.textContent = card.dataset.title;
     mChromeStore.href = card.dataset.chromeStore;
     mFirefoxAddons.href = card.dataset.firefoxAddons;
+    mWebsite.href = card.dataset.website;
     mGit.href = card.dataset.github;
 
     imgContainer.innerHTML = "";
