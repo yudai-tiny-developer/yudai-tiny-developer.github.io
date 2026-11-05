@@ -3,470 +3,1039 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Simple and Tiny Utilities</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: sans-serif;
-      background: #e9e9e9;
-      color: #292929;
-    }
-
-    .header {
-      background: #191919;
-      color: #e9e9e9;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .main-content {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      gap: 24px;
-    }
-
-    .content {
-      color: #292929;
-    }
-
-    .extension-card {
-      display: flex;
-      gap: 20px;
-      background: #f9f9f9;
-      padding: 18px;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, .48);
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .extension-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, .72);
-    }
-
-    .extension-card img {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      border-radius: 10px;
-      border: 1px solid #d9d9d9;
-    }
-
-    .footer {
-      text-align: center;
-      color: #292929;
-      padding: 30px 10px;
-    }
-
-    .modal.hidden {
-      display: none;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      max-height: calc(100vh - 40px);
-      overflow-y: auto;
-    }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .55);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 20px 0;
-    }
-
-    .modal-box {
-      position: relative;
-      max-width: 800px;
-      background: #f9f9f9;
-      margin: 8vh auto;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
-      animation: fadeUp .25s ease;
-    }
-
-    @keyframes fadeUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Primary Meta Tags -->
+  <title>Simple and Tiny Utilities | Lightweight Browser Extensions &amp; Web Tools</title>
+  <meta name="title" content="Simple and Tiny Utilities | Lightweight Browser Extensions &amp; Web Tools">
+  <meta name="description" content="Explore lightweight, single-purpose Chrome extensions, Firefox add-ons, and web tools by yudai-tiny-developer. Enhance YouTube live streams, filter feeds, and improve playback controls.">
+  <meta name="keywords" content="chrome extensions, firefox add-ons, youtube extensions, live stream delay mitigator, youtube subscription filter, open source browser extensions, lightweight utilities, video controls, yudai-tiny-developer">
+  <meta name="author" content="yudai-tiny-developer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yudai-tiny-developer.github.io/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="theme-color" content="#0a0e17">
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="google7bbed2a695005a05.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yudai-tiny-developer.github.io/">
+  <meta property="og:site_name" content="Simple and Tiny Utilities">
+  <meta property="og:title" content="Simple and Tiny Utilities | Lightweight Browser Extensions &amp; Web Tools">
+  <meta property="og:description" content="Discover lightweight, single-purpose browser extensions and web tools. Open source utilities built for a cleaner, faster web experience.">
+  <meta property="og:image" content="https://yudai-tiny-developer.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Simple and Tiny Utilities - Lightweight Browser Extensions &amp; Web Tools">
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yudai-tiny-developer.github.io/">
+  <meta property="twitter:site" content="@TinyDevelo83274">
+  <meta property="twitter:creator" content="@TinyDevelo83274">
+  <meta property="twitter:title" content="Simple and Tiny Utilities | Lightweight Browser Extensions &amp; Web Tools">
+  <meta property="twitter:description" content="Discover lightweight, single-purpose browser extensions and web tools. Open source utilities built for a cleaner, faster web experience.">
+  <meta property="twitter:image" content="https://yudai-tiny-developer.github.io/og-image.png">
+  <!-- Structured Data: JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://yudai-tiny-developer.github.io/#website",
+        "url": "https://yudai-tiny-developer.github.io/",
+        "name": "Simple and Tiny Utilities",
+        "description": "Lightweight, single-purpose Chrome extensions, Firefox add-ons, and web tools.",
+        "publisher": {
+          "@type": "Person",
+          "name": "yudai-tiny-developer",
+          "url": "https://github.com/yudai-tiny-developer",
+          "sameAs": [
+            "https://x.com/TinyDevelo83274",
+            "https://github.com/yudai-tiny-developer"
+          ]
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://yudai-tiny-developer.github.io/#items",
+        "name": "Utilities and Browser Extensions Collection",
+        "itemListElement": [
+          {
+            "@type": "SoftwareApplication",
+            "position": 1,
+            "name": "Subscription Feed Filter for YouTube",
+            "url": "https://yudai-tiny-developer.github.io/#subscription-feed-filter",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome, Mozilla Firefox",
+            "description": "Filter YouTube Subscriptions and Library by Live, Streamed, Shorts, Watched, and custom keywords.",
+            "image": "https://yudai-tiny-developer.github.io/filter/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 2,
+            "name": "YouTube Live Stream Latency Mitigator",
+            "url": "https://yudai-tiny-developer.github.io/#youtube-live-latency-mitigator",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome, Mozilla Firefox",
+            "description": "Mitigate YouTube live stream delay by subtly speeding up playback when lag is detected.",
+            "image": "https://yudai-tiny-developer.github.io/live-catch-up/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 3,
+            "name": "Auto Pan by Window Position",
+            "url": "https://yudai-tiny-developer.github.io/#auto-pan-by-window-position",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Pans web audio left or right dynamically based on the window position relative to display center.",
+            "image": "https://yudai-tiny-developer.github.io/auto-pan/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 4,
+            "name": "Improve YouTube Live Chat",
+            "url": "https://yudai-tiny-developer.github.io/#improve-youtube-live-chat",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Streamlines YouTube live chat with uniform single-line messages and user role color-coding.",
+            "image": "https://yudai-tiny-developer.github.io/single-line-chat/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 5,
+            "name": "YouTube Volume Control",
+            "url": "https://yudai-tiny-developer.github.io/#youtube-volume-control",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Adds touch-friendly volume buttons on YouTube video players.",
+            "image": "https://yudai-tiny-developer.github.io/tap-volume/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 6,
+            "name": "YouTube Playback Quality Control",
+            "url": "https://yudai-tiny-developer.github.io/#youtube-playback-quality-control",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Adds touch-friendly video resolution and quality switcher buttons to YouTube videos.",
+            "image": "https://yudai-tiny-developer.github.io/tap-quality/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 7,
+            "name": "YouTube Playback Rate Control",
+            "url": "https://yudai-tiny-developer.github.io/#youtube-playback-rate-control",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Quickly change playback speed with touch buttons on YouTube videos.",
+            "image": "https://yudai-tiny-developer.github.io/tap-rate/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 8,
+            "name": "Pin YouTube Control",
+            "url": "https://yudai-tiny-developer.github.io/#pin-youtube-control",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Pin YouTube player controls or reserve dedicated space below the video area.",
+            "image": "https://yudai-tiny-developer.github.io/pin-bottom/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 9,
+            "name": "Seek to Timecode Control for YouTube",
+            "url": "https://yudai-tiny-developer.github.io/#seek-to-timecode-control",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Jump to any exact timecode by clicking current time on YouTube video players.",
+            "image": "https://yudai-tiny-developer.github.io/jump-time/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 10,
+            "name": "YouTube Thumbnail Button",
+            "url": "https://yudai-tiny-developer.github.io/#youtube-thumbnail-button",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Adds a button to open and view the high-resolution thumbnail of YouTube videos.",
+            "image": "https://yudai-tiny-developer.github.io/tap-thumbnail/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 11,
+            "name": "Simplify YouTube",
+            "url": "https://yudai-tiny-developer.github.io/#simplify-youtube",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Declutter YouTube video controls by hiding unwanted overlay buttons.",
+            "image": "https://yudai-tiny-developer.github.io/yt-simplify/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 12,
+            "name": "Quick Post ScreenShot",
+            "url": "https://yudai-tiny-developer.github.io/#quick-post-screenshot",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Captures instant video screenshots and attaches them to X (Twitter) posts with hashtags.",
+            "image": "https://yudai-tiny-developer.github.io/post-screenshot/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 13,
+            "name": "Remove from watch history button for YouTube Player",
+            "url": "https://yudai-tiny-developer.github.io/#remove-from-watch-history",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Removes the current video from YouTube watch history directly from the video player.",
+            "image": "https://yudai-tiny-developer.github.io/pretend-not-to-watch/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 14,
+            "name": "Synchronized Playback for YouTube Archived Live Streams",
+            "url": "https://yudai-tiny-developer.github.io/#synchronized-playback-yt-archive",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "description": "Synchronize playback positions across multiple archived YouTube Live video perspectives.",
+            "image": "https://yudai-tiny-developer.github.io/yt-sync/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://chromewebstore.google.com/detail/synchronized-playback-for/lkinpbnkpmmikjbnfcmnlomimcefeffb"
+          },
+          {
+            "@type": "WebApplication",
+            "position": 15,
+            "name": "Height Chart Generator",
+            "url": "https://yudai-tiny-developer.github.io/height_chart/",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Any Web Browser",
+            "description": "Web application that generates customizable height comparison charts from images and CSV data.",
+            "image": "https://yudai-tiny-developer.github.io/height_chart_gen/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "WebApplication",
+            "position": 16,
+            "name": "Cylinder Text Animation",
+            "url": "https://yudai-tiny-developer.github.io/cylinder_text/",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Any Web Browser",
+            "description": "3D text cylinder animation tool using CSS 3D transforms and vanilla JavaScript.",
+            "image": "https://yudai-tiny-developer.github.io/cylinder_text_ani/128.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
       }
-
-      to {
-        transform: none;
-        opacity: 1;
-      }
-    }
-
-    .modal-images {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      margin-bottom: 16px;
-    }
-
-    .modal-images img {
-      height: 200px;
-      flex-shrink: 0;
-      border-radius: 10px;
-      border: 1px solid #d9d9d9;
-      background: #e9e9e9;
-      display: block;
-      margin: 16px auto 16px;
-    }
-
-    .modal-box h2 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .modal-box p {
-      font-size: .95rem;
-      margin-bottom: 16px;
-    }
-
-    .modal-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .modal-links a {
-      display: block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: #292929;
-      color: #e9e9e9;
-      text-decoration: none;
-      font-size: .9rem;
-    }
-
-    .modal-links a#modal-chrome-store {
-      background: #c9e9c9;
-      color: #191919;
-    }
-
-    .modal-links a#modal-firefox-addons {
-      background: #e9c9c9;
-      color: #191919;
-    }
-
-    .modal-links a#modal-website {
-      background: #c9d9e9;
-      color: #191919;
-    }
-
-    .modal-links a#modal-github {
-      background: #191919;
-      color: #e9e9e9;
-    }
-
-    .modal-links a[href="undefined"] {
-      display: none;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-size: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    #modal-desc {
-      white-space: pre-line;
-    }
-
-    img.icon {
-      width: 20px;
-      height: 20px;
-      margin-left: 4px;
-      margin-right: 4px;
-    }
-
-    img.icon-small {
-      width: 10px;
-      height: 10px;
-      margin-left: 2px;
-      margin-right: 2px;
-    }
-
-    .msg {
-      font-family: serif;
-      font-size: .8rem;
-    }
-
-    .feedback-form {
-      display: flex;
-      justify-content: right;
-      margin-right: 15%;
-      font-size: .9rem;
-    }
-
-    a.feedback-form {
-      color: #00d4ff;
-    }
-
-    a.feedback-form:hover {
-      color: #00d4ff;
-    }
-
-    a.x {
-      color: #292929;
-    }
-
-    a.x:hover {
-      color: #292929;
-    }
-  </style>
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 
 <body>
+  <!-- Header / Hero Section -->
   <header class="header">
-    <h1>Simple and Tiny Utilities</h1>
-    <h2>Chrome Extensions and Firefox Add-ons</h2>
-    <div class="msg">
-      <p>I build and release tiny tools you can easily live without—but that are just a little handy to have.</p>
-      <p>I don't plan to charge for using them, show ads in them, or ask for donations for their use.</p>
-      <p>My aim is to keep them simple and self-explanatory, focusing on single-purpose tools rather than bundling multiple features together.</p>
-    </div>
-    <div class="feedback-form">
-      <a class="feedback-form" href="https://docs.google.com/forms/d/e/1FAIpQLSflBYT48KTuGFCTopkhoABzeHD6pL18CCa_WzWhsXvn2rwq_Q/viewform">Anonymous Feedback Form</a>
+    <div class="header-container">
+      <div class="features-tagline" aria-label="Key attributes">
+        <span class="feature-item"><span>✨</span> Open Source</span>
+        <span class="feature-divider" aria-hidden="true">•</span>
+        <span class="feature-item"><span>🛡️</span> Privacy-First</span>
+        <span class="feature-divider" aria-hidden="true">•</span>
+        <span class="feature-item"><span>⚡</span> Single-Purpose Utilities</span>
+      </div>
+      <h1>Simple and Tiny Utilities</h1>
+      <p class="header-lead">Lightweight browser extensions and web tools built with focus, precision, and zero bloat.</p>
+      <div class="philosophy-card">
+        <p>I build and release tiny tools you can easily live without—but that are just a little handy to have.</p>
+        <p>I don't plan to charge for using them, show ads in them, or ask for donations for their use.</p>
+        <p>My aim is to keep them simple and self-explanatory, focusing on single-purpose tools rather than bundling multiple features together.</p>
+      </div>
+      <div class="header-links">
+        <a class="btn-secondary" href="https://github.com/yudai-tiny-developer" target="_blank" rel="noopener noreferrer">
+          <img src="logo/github.png" alt="" width="16" height="16"> GitHub Profile </a>
+        <a class="btn-secondary" href="https://x.com/TinyDevelo83274" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg> @TinyDevelo83274 </a>
+        <a class="btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSflBYT48KTuGFCTopkhoABzeHD6pL18CCa_WzWhsXvn2rwq_Q/viewform" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg> Anonymous Feedback Form </a>
+      </div>
     </div>
   </header>
+  <!-- Controls Section (Search & Filter) -->
+  <section class="controls-section" aria-label="Tool filters and search">
+    <div class="search-wrapper">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Search utilities by keyword (e.g. latency, filter, volume, chat)..." aria-label="Search tools">
+    </div>
+    <div class="filter-tabs" role="tablist" aria-label="Filter tools by category">
+      <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true"> All <span class="tab-count">16</span>
+      </button>
+      <button class="filter-tab" data-filter="youtube" role="tab" aria-selected="false"> YouTube <span class="tab-count">13</span>
+      </button>
+      <button class="filter-tab" data-filter="live-stream" role="tab" aria-selected="false"> Live Stream <span class="tab-count">4</span>
+      </button>
+      <button class="filter-tab" data-filter="player-controls" role="tab" aria-selected="false"> Player Controls <span class="tab-count">6</span>
+      </button>
+      <button class="filter-tab" data-filter="web-app" role="tab" aria-selected="false"> Web Apps <span class="tab-count">2</span>
+      </button>
+    </div>
+  </section>
+  <!-- Main Tools Showcase -->
   <main class="main-content">
-    <section class="extension-card"
-             data-title="Subscription Feed Filter for YouTube"
-             data-desc="This extension brings filter options similar to those on the YouTube home screen to pages like Subscriptions and Library.\n\n<Filters>\nThe following filters are available:\n- Live, Streamed, Videos, Shorts, Scheduled, Notifications On, Notifications Off\n- Unwatched, Watched\n\nBy enabling multi-selection in the settings, you can combine multiple filters. For example, selecting both &quot;Live&quot; and &quot;Streamed&quot; will display videos that are either live or have already been streamed.\nYou can also customize the order and display names of the filters in the settings.\n\n<Keyword Search>\nYou can filter videos using keywords. For example, entering &quot;News&quot; will display videos with &quot;News&quot; in the title.\nKeyword search also supports filtering in the Sidebar Subscriptions, Notifications, and Save to playlist sections."
-             data-img="filter/desc.png,filter/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa"
-             data-firefox-addons="https://addons.mozilla.org/firefox/addon/subscription-feed-filter/"
-             data-github="https://github.com/yudai-tiny-developer/filter">
-      <img src="filter/128.png" alt="">
-      <div class="content">
-        <h2>Subscription Feed Filter for YouTube<img class="icon" src="logo/chrome.png" /><img class="icon" src="logo/firefox.png" /></h2>
-        <p>Filters such as Live, Streamed, Video, and Keyword search can be added to Subscriptions, Playlists, and other YouTube pages.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="YouTube Live Stream Latency Mitigator"
-             data-desc="This extension temporarily increases the playback speed of YouTube live streams with DVR enabled when a delay is detected (i.e., the red &quot;LIVE&quot; indicator turns gray), helping you catch up to real time.\n\nWhen &quot;Aggressive mode&quot; is enabled in the settings, the extension continues increasing playback speed to catch up to real time as long as there is buffer, even if YouTube has not detected a delay. Aggressive mode also works on YouTube live streams where DVR is disabled.\n\nAdditional features include:\n- Displaying the current playback speed\n- Displaying the number of seconds delayed\n- Displaying the remaining buffer size\n- Predicting and showing the time you will catch up to real time at the current speed\n- Displaying the elapsed time of the live stream\n- Copying the current timestamp to the clipboard by clicking the elapsed time display"
-             data-img="live-catch-up/desc.png,live-catch-up/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp"
-             data-firefox-addons="https://addons.mozilla.org/firefox/addon/youtube-live-stream-laten/"
-             data-github="https://github.com/yudai-tiny-developer/live-catch-up">
-      <img src="live-catch-up/128.png" alt="">
-      <div class="content">
-        <h2>YouTube Live Stream Latency Mitigator<img class="icon" src="logo/chrome.png" /><img class="icon" src="logo/firefox.png" /></h2>
-        <p>This extension syncs YouTube live streams in real-time by accelerating viewer-delayed streams caused by data reception delays.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Auto Pan by Window Position"
-             data-desc="This extension controls audio panning, enabling sound to be heard from the left when the window is positioned to the left of the display's center and from the right when it's on the right side.\nIt may not function on sites with CORS configured.\n\nCAUTION: On Twitch, the audio may become muted."
-             data-img="auto-pan/desc.png,auto-pan/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf"
-             data-github="https://github.com/yudai-tiny-developer/auto-pan">
-      <img src="auto-pan/128.png" alt="">
-      <div class="content">
-        <h2>Auto Pan by Window Position<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension enables audio panning to the left or right based on the window's position relative to the display center.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Improve YouTube Live Chat"
-             data-desc="This extension provides the following features to improve YouTube live chat:\n\n- Displays each message in a single line. This ensures that even long messages spanning multiple lines take up uniform space. Hovering over a message will display its full content as usual.\n- Hides icons, sender names, badges, and XP from messages.\n- Differentiates message text and background colors based on user type: general users, members, moderators, and owners."
-             data-img="single-line-chat/desc.png,single-line-chat/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn"
-             data-github="https://github.com/yudai-tiny-developer/single-line-chat">
-      <img src="single-line-chat/128.png" alt="">
-      <div class="content">
-        <h2>Improve YouTube Live Chat<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension provides the features to improve YouTube live chat.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="YouTube Volume Control"
-             data-desc="This extension adds a button to YouTube videos that allows you to change the volume with touch operations."
-             data-img="tap-volume/desc.png,tap-volume/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl"
-             data-github="https://github.com/yudai-tiny-developer/tap-volume">
-      <img src="tap-volume/128.png" alt="">
-      <div class="content">
-        <h2>YouTube Volume Control<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to YouTube videos that allows you to change the volume with touch operations.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="YouTube Playback Quality Control"
-             data-desc="This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations."
-             data-img="tap-quality/desc.png,tap-quality/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg"
-             data-github="https://github.com/yudai-tiny-developer/tap-quality">
-      <img src="tap-quality/128.png" alt="">
-      <div class="content">
-        <h2>YouTube Playback Quality Control<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="YouTube Playback Rate Control"
-             data-desc="This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations."
-             data-img="tap-rate/desc.png,tap-rate/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl"
-             data-github="https://github.com/yudai-tiny-developer/tap-rate">
-      <img src="tap-rate/128.png" alt="">
-      <div class="content">
-        <h2>YouTube Playback Rate Control<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Pin YouTube Control"
-             data-desc="This extension adds a button to pin the YouTube controls.\nBy turning on the optional &quot;Reserve space to display the controls,&quot; you can separate the YouTube controls from the video area."
-             data-img="pin-bottom/desc.png,pin-bottom/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj"
-             data-github="https://github.com/yudai-tiny-developer/pin-bottom">
-      <img src="pin-bottom/128.png" alt="">
-      <div class="content">
-        <h2>Pin YouTube Control<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to pin the YouTube controls.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Seek to Timecode Control for YouTube"
-             data-desc="An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode\nThis extension allows you to edit the current time of YouTube videos, enabling you to seek to specific timecodes by inputting them."
-             data-img="jump-time/desc.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo"
-             data-github="https://github.com/yudai-tiny-developer/jump-time">
-      <img src="jump-time/128.png" alt="">
-      <div class="content">
-        <h2>Seek to Timecode Control for YouTube<img class="icon" src="logo/chrome.png" /></h2>
-        <p>An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="YouTube Thumbnail Button"
-             data-desc="This extension adds a button to YouTube videos that allows you to open the thumbnail with touch operations."
-             data-img="tap-thumbnail/desc.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca"
-             data-github="https://github.com/yudai-tiny-developer/tap-thumbnail">
-      <img src="tap-thumbnail/128.png" alt="">
-      <div class="content">
-        <h2>YouTube Thumbnail Button<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to YouTube videos that allows you to open the thumbnail with touch operations.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Simplify YouTube"
-             data-desc="This extension hides some buttons from the YouTube controls."
-             data-img="yt-simplify/desc.png,yt-simplify/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi"
-             data-github="https://github.com/yudai-tiny-developer/yt-simplify">
-      <img src="yt-simplify/128.png" alt="">
-      <div class="content">
-        <h2>Simplify YouTube<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension hides some buttons from the YouTube controls.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Quick Post ScreenShot"
-             data-desc="Clicking the extension icon instantly opens the X (formerly Twitter) post editor with a screenshot of the video attached.\n\nIt is mainly intended for posting screenshots to support livestreams you are watching, such as YouTube Live broadcasts. To minimize disruption while watching a livestream, it is designed to allow you to post a screenshot instantly without cumbersome operations.\n\n- If the window title contains a hashtag, it will be reflected in the post text.\n- The post will be made from the account currently logged in.\n- When enabled, the post page can be opened in a popup window instead of a tab.\n- When enabled, image quality can be set to high (compression setting 1.0) instead of the default (compression setting 0.85).\n- When enabled, screenshots can be downloaded.\n- When enabled, you can fine-tune actions such as stepping back before posting a screenshot.\n- By setting shortcut keys, you can also operate it using the keyboard.\n- Posting recorded videos is also supported."
-             data-img="post-screenshot/desc.png,post-screenshot/settings.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo"
-             data-github="https://github.com/yudai-tiny-developer/post-screenshot">
-      <img src="post-screenshot/128.png" alt="">
-      <div class="content">
-        <h2>Quick Post ScreenShot<img class="icon" src="logo/chrome.png" /></h2>
-        <p>Supports posting video screenshots to X</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Remove from watch history button for YouTube Player"
-             data-desc="This extension adds a button to YouTube video pages that allows you to remove the video from your watch history. If you don't like a video and don't want it to remain in your watch history, you can remove it directly from the video page without having to go to the history page."
-             data-img="pretend-not-to-watch/desc.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc"
-             data-github="https://github.com/yudai-tiny-developer/pretend-not-to-watch">
-      <img src="pretend-not-to-watch/128.png" alt="">
-      <div class="content">
-        <h2>Remove from watch history button for YouTube Player<img class="icon" src="logo/chrome.png" /></h2>
-        <p>This extension adds a button to YouTube Player that removes the view of current video from your watch history.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Synchronized Playback for YouTube Archived Live Streams"
-             data-desc="Synchronizes playback positions across multiple archived YouTube Live videos.\n\nWhen watching collaboration streams where multiple live streamers broadcast from their own perspectives, this feature allows you to open multiple archive videos in separate windows and automatically align their playback positions, enabling synchronized viewing across all streams."
-             data-img="yt-sync/desc.png"
-             data-chrome-store="https://chromewebstore.google.com/detail/synchronized-playback-for/lkinpbnkpmmikjbnfcmnlomimcefeffb"
-             data-github="https://github.com/yudai-tiny-developer/yt-sync">
-      <img src="yt-sync/128.png" alt="">
-      <div class="content">
-        <h2>Synchronized Playback for YouTube Archived Live Streams<img class="icon" src="logo/chrome.png" /></h2>
-        <p>Synchronizes playback positions across multiple archived YouTube Live videos.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Height Chart Generator"
-             data-desc="A web application that generates highly customizable height comparison charts from character images and CSV data. It runs completely locally in your browser."
-             data-img="height_chart_gen/desc.png"
-             data-website="https://yudai-tiny-developer.github.io/height_chart/"
-             data-github="https://github.com/yudai-tiny-developer/height_chart">
-      <img src="height_chart_gen/128.png" alt="">
-      <div class="content">
-        <h2>Height Chart Generator</h2>
-        <p>A web application that generates highly customizable height comparison charts from character images and CSV data.</p>
-      </div>
-    </section>
-    <section class="extension-card"
-             data-title="Cylinder Text Animation"
-             data-desc="A browser-based 3D text animation that wraps customizable text around a cylinder. The app uses CSS 3D transforms and vanilla JavaScript, so no build step or server is required."
-             data-img="cylinder_text_ani/desc.png"
-             data-website="https://yudai-tiny-developer.github.io/cylinder_text/"
-             data-github="https://github.com/yudai-tiny-developer/cylinder_text">
-      <img src="cylinder_text_ani/128.png" alt="">
-      <div class="content">
-        <h2>Cylinder Text Animation</h2>
-        <p>A browser-based 3D text animation that wraps customizable text around a cylinder.</p>
-      </div>
-    </section>
+    <div class="tools-grid">
+      <!-- 1. Subscription Feed Filter for YouTube -->
+      <article class="tool-card" id="subscription-feed-filter" tabindex="0"
+               data-title="Subscription Feed Filter for YouTube"
+               data-category="youtube filter"
+               data-tags="YouTube, Subscriptions, Library, Feed Filter, Keyword Search"
+               data-desc="This extension brings filter options similar to those on the YouTube home screen to pages like Subscriptions and Library.
+
+&lt;Filters&gt;
+The following filters are available:
+- Live, Streamed, Videos, Shorts, Scheduled, Notifications On, Notifications Off
+- Unwatched, Watched
+
+By enabling multi-selection in the settings, you can combine multiple filters. For example, selecting both &quot;Live&quot; and &quot;Streamed&quot; will display videos that are either live or have already been streamed.
+You can also customize the order and display names of the filters in the settings.
+
+&lt;Keyword Search&gt;
+You can filter videos using keywords. For example, entering &quot;News&quot; will display videos with &quot;News&quot; in the title.
+Keyword search also supports filtering in the Sidebar Subscriptions, Notifications, and Save to playlist sections."
+               data-icon="filter/128.png"
+               data-images="filter/desc.png,filter/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa"
+               data-firefox-addons="https://addons.mozilla.org/firefox/addon/subscription-feed-filter/"
+               data-github="https://github.com/yudai-tiny-developer/filter">
+        <div class="card-top">
+          <img class="tool-icon" src="filter/128.png" alt="Subscription Feed Filter for YouTube icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Subscription Feed Filter for YouTube</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+              <span class="platform-pill"><img src="logo/firefox.png" alt="" class="platform-icon">Firefox</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Adds home-screen style filters (Live, Streamed, Shorts, Watched/Unwatched) and keyword search to YouTube Subscriptions and Library.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#FeedFilter</span>
+          <span class="tag">#Subscriptions</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/subscription-feed-filter/jpdngflnlekafjhdlcnijphhcmeibdoa" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://addons.mozilla.org/firefox/addon/subscription-feed-filter/" target="_blank" rel="noopener noreferrer" title="Get on Firefox Add-ons">
+              <img src="logo/firefox.png" alt="Firefox Add-ons">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/filter" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 2. YouTube Live Stream Latency Mitigator -->
+      <article class="tool-card" id="youtube-live-latency-mitigator" tabindex="0"
+               data-title="YouTube Live Stream Latency Mitigator"
+               data-category="youtube live-stream"
+               data-tags="YouTube, Live Stream, Low Latency, Sync, Playback Speed, Real-Time"
+               data-desc="This extension temporarily increases the playback speed of YouTube live streams with DVR enabled when a delay is detected (i.e., the red &quot;LIVE&quot; indicator turns gray), helping you catch up to real time.
+
+When &quot;Aggressive mode&quot; is enabled in the settings, the extension continues increasing playback speed to catch up to real time as long as there is buffer, even if YouTube has not detected a delay. Aggressive mode also works on YouTube live streams where DVR is disabled.
+
+Additional features include:
+- Displaying the current playback speed
+- Displaying the number of seconds delayed
+- Displaying the remaining buffer size
+- Predicting and showing the time you will catch up to real time at the current speed
+- Displaying the elapsed time of the live stream
+- Copying the current timestamp to the clipboard by clicking the elapsed time display"
+               data-icon="live-catch-up/128.png"
+               data-images="live-catch-up/desc.png,live-catch-up/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp"
+               data-firefox-addons="https://addons.mozilla.org/firefox/addon/youtube-live-stream-laten/"
+               data-github="https://github.com/yudai-tiny-developer/live-catch-up">
+        <div class="card-top">
+          <img class="tool-icon" src="live-catch-up/128.png" alt="YouTube Live Stream Latency Mitigator icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">YouTube Live Stream Latency Mitigator</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+              <span class="platform-pill"><img src="logo/firefox.png" alt="" class="platform-icon">Firefox</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Automatically accelerates delayed YouTube live streams back to real-time sync when buffer lag occurs.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#LiveStream</span>
+          <span class="tag">#LowLatency</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/youtube-live-stream-laten/ambdnabnehojedeaffciphbmfhfmfmjp" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://addons.mozilla.org/firefox/addon/youtube-live-stream-laten/" target="_blank" rel="noopener noreferrer" title="Get on Firefox Add-ons">
+              <img src="logo/firefox.png" alt="Firefox Add-ons">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/live-catch-up" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 3. Auto Pan by Window Position -->
+      <article class="tool-card" id="auto-pan-by-window-position" tabindex="0"
+               data-title="Auto Pan by Window Position"
+               data-category="utility"
+               data-tags="Audio, Sound Panning, Stereo, Multi-Monitor, Window Position"
+               data-desc="This extension controls audio panning, enabling sound to be heard from the left when the window is positioned to the left of the display's center and from the right when it's on the right side.
+It may not function on sites with CORS configured.
+
+CAUTION: On Twitch, the audio may become muted."
+               data-icon="auto-pan/128.png"
+               data-images="auto-pan/desc.png,auto-pan/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf"
+               data-github="https://github.com/yudai-tiny-developer/auto-pan">
+        <div class="card-top">
+          <img class="tool-icon" src="auto-pan/128.png" alt="Auto Pan by Window Position icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Auto Pan by Window Position</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Automatically pans audio balance left or right depending on the browser window's physical position on your screen.</p>
+        <div class="card-tags">
+          <span class="tag">#Audio</span>
+          <span class="tag">#Stereo</span>
+          <span class="tag">#Multitasking</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/auto-pan-by-window-positi/endjnlmjnfebiajbcibmldiemeakmodf" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/auto-pan" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 4. Improve YouTube Live Chat -->
+      <article class="tool-card" id="improve-youtube-live-chat" tabindex="0"
+               data-title="Improve YouTube Live Chat"
+               data-category="youtube live-stream"
+               data-tags="YouTube, Live Chat, Single Line, Chat Filter, Color Coded"
+               data-desc="This extension provides the following features to improve YouTube live chat:
+
+- Displays each message in a single line. This ensures that even long messages spanning multiple lines take up uniform space. Hovering over a message will display its full content as usual.
+- Hides icons, sender names, badges, and XP from messages.
+- Differentiates message text and background colors based on user type: general users, members, moderators, and owners."
+               data-icon="single-line-chat/128.png"
+               data-images="single-line-chat/desc.png,single-line-chat/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn"
+               data-github="https://github.com/yudai-tiny-developer/single-line-chat">
+        <div class="card-top">
+          <img class="tool-icon" src="single-line-chat/128.png" alt="Improve YouTube Live Chat icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Improve YouTube Live Chat</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Streamlines YouTube live chat with clean single-line messages, role-based color coding, and minimal clutter.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#LiveChat</span>
+          <span class="tag">#CleanUI</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/force-single-line-for-you/ehnkhenodjdfilgpgohbghfjcigjdifn" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/single-line-chat" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 5. YouTube Volume Control -->
+      <article class="tool-card" id="youtube-volume-control" tabindex="0"
+               data-title="YouTube Volume Control"
+               data-category="youtube player-controls"
+               data-tags="YouTube, Volume Control, Touch Friendly, Player Overlay"
+               data-desc="This extension adds a button to YouTube videos that allows you to change the volume with touch operations."
+               data-icon="tap-volume/128.png"
+               data-images="tap-volume/desc.png,tap-volume/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl"
+               data-github="https://github.com/yudai-tiny-developer/tap-volume">
+        <div class="card-top">
+          <img class="tool-icon" src="tap-volume/128.png" alt="YouTube Volume Control icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">YouTube Volume Control</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Adds touch-friendly on-screen volume adjustment buttons directly onto the YouTube video player overlay.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#Volume</span>
+          <span class="tag">#TouchFriendly</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/youtube-volume-control-fo/bnlonpmgdljdcbcikglejiddbnlbphhl" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/tap-volume" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 6. YouTube Playback Quality Control -->
+      <article class="tool-card" id="youtube-playback-quality-control" tabindex="0"
+               data-title="YouTube Playback Quality Control"
+               data-category="youtube player-controls"
+               data-tags="YouTube, Resolution, Video Quality, Quick Switch, Touch Friendly"
+               data-desc="This extension adds a button to YouTube videos that allows you to change the playback quality with touch operations."
+               data-icon="tap-quality/128.png"
+               data-images="tap-quality/desc.png,tap-quality/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg"
+               data-github="https://github.com/yudai-tiny-developer/tap-quality">
+        <div class="card-top">
+          <img class="tool-icon" src="tap-quality/128.png" alt="YouTube Playback Quality Control icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">YouTube Playback Quality Control</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Adds one-touch quick resolution switcher buttons directly to the YouTube video control bar.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#VideoQuality</span>
+          <span class="tag">#Resolution</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/youtube-playback-quality/pdldflmoghejmdcdpibfgncpbpjbdogg" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/tap-quality" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 7. YouTube Playback Rate Control -->
+      <article class="tool-card" id="youtube-playback-rate-control" tabindex="0"
+               data-title="YouTube Playback Rate Control"
+               data-category="youtube player-controls"
+               data-tags="YouTube, Speed Controller, Playback Rate, Touch Friendly"
+               data-desc="This extension adds a button to YouTube videos that allows you to change the playback rate with touch operations."
+               data-icon="tap-rate/128.png"
+               data-images="tap-rate/desc.png,tap-rate/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl"
+               data-github="https://github.com/yudai-tiny-developer/tap-rate">
+        <div class="card-top">
+          <img class="tool-icon" src="tap-rate/128.png" alt="YouTube Playback Rate Control icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">YouTube Playback Rate Control</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Easily switch playback speed on YouTube videos with convenient touch and click buttons on the player.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#PlaybackSpeed</span>
+          <span class="tag">#Controls</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/youtube-playback-rate-con/gehlcandikhmhhkejmneplgmocjpegcl" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/tap-rate" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 8. Pin YouTube Control -->
+      <article class="tool-card" id="pin-youtube-control" tabindex="0"
+               data-title="Pin YouTube Control"
+               data-category="youtube player-controls"
+               data-tags="YouTube, Pin Controls, UI Layout, Always Visible"
+               data-desc="This extension adds a button to pin the YouTube controls.
+By turning on the optional &quot;Reserve space to display the controls,&quot; you can separate the YouTube controls from the video area."
+               data-icon="pin-bottom/128.png"
+               data-images="pin-bottom/desc.png,pin-bottom/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj"
+               data-github="https://github.com/yudai-tiny-developer/pin-bottom">
+        <div class="card-top">
+          <img class="tool-icon" src="pin-bottom/128.png" alt="Pin YouTube Control icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Pin YouTube Control</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Keeps YouTube controls permanently pinned or separates control buttons below the video area to avoid overlay obstructions.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#PinControls</span>
+          <span class="tag">#CustomUI</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/pin-youtube-control/aegeomojnipoafjjjlajnpchphkneobj" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/pin-bottom" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 9. Seek to Timecode Control for YouTube -->
+      <article class="tool-card" id="seek-to-timecode-control" tabindex="0"
+               data-title="Seek to Timecode Control for YouTube"
+               data-category="youtube player-controls"
+               data-tags="YouTube, Timecode, Seek, Jump, Video Navigation"
+               data-desc="An extension that allows you to seek to any time by clicking the current time on a YouTube video and entering a timecode.
+This extension allows you to edit the current time of YouTube videos, enabling you to seek to specific timecodes by inputting them."
+               data-icon="jump-time/128.png"
+               data-images="jump-time/desc.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo"
+               data-github="https://github.com/yudai-tiny-developer/jump-time">
+        <div class="card-top">
+          <img class="tool-icon" src="jump-time/128.png" alt="Seek to Timecode Control for YouTube icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Seek to Timecode Control for YouTube</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Jump to any specific moment in a YouTube video simply by clicking the current timestamp and typing a timecode.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#Timecode</span>
+          <span class="tag">#VideoSeek</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/seek-to-timecode-control/jlceencaalimelhdbkjpcddmmhfkcmfo" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/jump-time" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 10. YouTube Thumbnail Button -->
+      <article class="tool-card" id="youtube-thumbnail-button" tabindex="0"
+               data-title="YouTube Thumbnail Button"
+               data-category="youtube utility"
+               data-tags="YouTube, Thumbnail, High Resolution, Media Button"
+               data-desc="This extension adds a button to YouTube videos that allows you to open the thumbnail with touch operations."
+               data-icon="tap-thumbnail/128.png"
+               data-images="tap-thumbnail/desc.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca"
+               data-github="https://github.com/yudai-tiny-developer/tap-thumbnail">
+        <div class="card-top">
+          <img class="tool-icon" src="tap-thumbnail/128.png" alt="YouTube Thumbnail Button icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">YouTube Thumbnail Button</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Adds a direct player button to quickly view and open the high-resolution original thumbnail of the playing video.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#Thumbnail</span>
+          <span class="tag">#Media</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/youtube-thumbnail-button/kjmpiadpbebjjnmhckflccfmndjmhfca" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/tap-thumbnail" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 11. Simplify YouTube -->
+      <article class="tool-card" id="simplify-youtube" tabindex="0"
+               data-title="Simplify YouTube"
+               data-category="youtube utility"
+               data-tags="YouTube, Minimalist, Cleaner Player, Distraction Free"
+               data-desc="This extension hides some buttons from the YouTube controls."
+               data-icon="yt-simplify/128.png"
+               data-images="yt-simplify/desc.png,yt-simplify/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi"
+               data-github="https://github.com/yudai-tiny-developer/yt-simplify">
+        <div class="card-top">
+          <img class="tool-icon" src="yt-simplify/128.png" alt="Simplify YouTube icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Simplify YouTube</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Declutters the YouTube video interface by cleanly hiding unnecessary buttons and overlay elements for focused viewing.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#Minimalist</span>
+          <span class="tag">#CleanUI</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/simplify-youtube/bghdcbjcpljlfodcogdfkmbobmebbnfi" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/yt-simplify" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 12. Quick Post ScreenShot -->
+      <article class="tool-card" id="quick-post-screenshot" tabindex="0"
+               data-title="Quick Post ScreenShot"
+               data-category="utility social"
+               data-tags="Twitter, X, Video Screenshot, Live Stream, Social Sharing"
+               data-desc="Clicking the extension icon instantly opens the X (formerly Twitter) post editor with a screenshot of the video attached.
+
+It is mainly intended for posting screenshots to support livestreams you are watching, such as YouTube Live broadcasts. To minimize disruption while watching a livestream, it is designed to allow you to post a screenshot instantly without cumbersome operations.
+
+- If the window title contains a hashtag, it will be reflected in the post text.
+- The post will be made from the account currently logged in.
+- When enabled, the post page can be opened in a popup window instead of a tab.
+- When enabled, image quality can be set to high (compression setting 1.0) instead of the default (compression setting 0.85).
+- When enabled, screenshots can be downloaded.
+- When enabled, you can fine-tune actions such as stepping back before posting a screenshot.
+- By setting shortcut keys, you can also operate it using the keyboard.
+- Posting recorded videos is also supported."
+               data-icon="post-screenshot/128.png"
+               data-images="post-screenshot/desc.png,post-screenshot/settings.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo"
+               data-github="https://github.com/yudai-tiny-developer/post-screenshot">
+        <div class="card-top">
+          <img class="tool-icon" src="post-screenshot/128.png" alt="Quick Post ScreenShot icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Quick Post ScreenShot</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Instantly snaps video screenshots and opens the X (Twitter) composer with stream hashtags automatically populated.</p>
+        <div class="card-tags">
+          <span class="tag">#Screenshot</span>
+          <span class="tag">#TwitterX</span>
+          <span class="tag">#LiveStream</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/quick-post-screenshot/bmmjnogededbipejnejlfdpaefailieo" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/post-screenshot" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 13. Remove from watch history button for YouTube Player -->
+      <article class="tool-card" id="remove-from-watch-history" tabindex="0"
+               data-title="Remove from watch history button for YouTube Player"
+               data-category="youtube utility"
+               data-tags="YouTube, Watch History, Privacy, Convenience"
+               data-desc="This extension adds a button to YouTube video pages that allows you to remove the video from your watch history. If you don't like a video and don't want it to remain in your watch history, you can remove it directly from the video page without having to go to the history page."
+               data-icon="pretend-not-to-watch/128.png"
+               data-images="pretend-not-to-watch/desc.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc"
+               data-github="https://github.com/yudai-tiny-developer/pretend-not-to-watch">
+        <div class="card-top">
+          <img class="tool-icon" src="pretend-not-to-watch/128.png" alt="Remove from watch history button icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Remove from watch history button</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Remove current videos from your YouTube watch history with one click directly from the video page.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#Privacy</span>
+          <span class="tag">#WatchHistory</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/remove-from-watch-history/ddchadacgpngkidekijlhljioknbpafc" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/pretend-not-to-watch" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 14. Synchronized Playback for YouTube Archived Live Streams -->
+      <article class="tool-card" id="synchronized-playback-yt-archive" tabindex="0"
+               data-title="Synchronized Playback for YouTube Archived Live Streams"
+               data-category="youtube live-stream"
+               data-tags="YouTube, Sync, Multi-POV, Archive Stream, Collaboration"
+               data-desc="Synchronizes playback positions across multiple archived YouTube Live videos.
+
+When watching collaboration streams where multiple live streamers broadcast from their own perspectives, this feature allows you to open multiple archive videos in separate windows and automatically align their playback positions, enabling synchronized viewing across all streams."
+               data-icon="yt-sync/128.png"
+               data-images="yt-sync/desc.png"
+               data-chrome-store="https://chromewebstore.google.com/detail/synchronized-playback-for/lkinpbnkpmmikjbnfcmnlomimcefeffb"
+               data-github="https://github.com/yudai-tiny-developer/yt-sync">
+        <div class="card-top">
+          <img class="tool-icon" src="yt-sync/128.png" alt="Synchronized Playback for YouTube Archived Live Streams icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Synchronized Playback for YouTube Archived Live Streams</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/chrome.png" alt="" class="platform-icon">Chrome</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Automatically aligns and syncs timestamps across multiple archived YouTube collaboration live streams opened in separate windows.</p>
+        <div class="card-tags">
+          <span class="tag">#YouTube</span>
+          <span class="tag">#MultiPOV</span>
+          <span class="tag">#SyncPlayback</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://chromewebstore.google.com/detail/synchronized-playback-for/lkinpbnkpmmikjbnfcmnlomimcefeffb" target="_blank" rel="noopener noreferrer" title="Get on Chrome Web Store">
+              <img src="logo/chrome.png" alt="Chrome Web Store">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/yt-sync" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 15. Height Chart Generator -->
+      <article class="tool-card" id="height-chart-generator" tabindex="0"
+               data-title="Height Chart Generator"
+               data-category="web-app creative"
+               data-tags="Web App, Height Chart, Generator, Character Art, Visual Tool"
+               data-desc="A web application that generates highly customizable height comparison charts from character images and CSV data. It runs completely locally in your browser."
+               data-icon="height_chart_gen/128.png"
+               data-images="height_chart_gen/desc.png"
+               data-website="https://yudai-tiny-developer.github.io/height_chart/"
+               data-github="https://github.com/yudai-tiny-developer/height_chart">
+        <div class="card-top">
+          <img class="tool-icon" src="height_chart_gen/128.png" alt="Height Chart Generator icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Height Chart Generator</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/website.png" alt="" class="platform-icon">Web App</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Generates customizable height comparison charts from character images and CSV data. Operates entirely locally in your browser.</p>
+        <div class="card-tags">
+          <span class="tag">#WebApp</span>
+          <span class="tag">#HeightChart</span>
+          <span class="tag">#Creative</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://yudai-tiny-developer.github.io/height_chart/" target="_blank" rel="noopener noreferrer" title="Launch Web Application">
+              <img src="logo/website.png" alt="Web Application">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/height_chart" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+      <!-- 16. Cylinder Text Animation -->
+      <article class="tool-card" id="cylinder-text-animation" tabindex="0"
+               data-title="Cylinder Text Animation"
+               data-category="web-app creative"
+               data-tags="Web App, CSS 3D, Text Animation, Pure JS, Visual Design"
+               data-desc="A browser-based 3D text animation that wraps customizable text around a cylinder. The app uses CSS 3D transforms and vanilla JavaScript, so no build step or server is required."
+               data-icon="cylinder_text_ani/128.png"
+               data-images="cylinder_text_ani/desc.png"
+               data-website="https://yudai-tiny-developer.github.io/cylinder_text/"
+               data-github="https://github.com/yudai-tiny-developer/cylinder_text">
+        <div class="card-top">
+          <img class="tool-icon" src="cylinder_text_ani/128.png" alt="Cylinder Text Animation icon" width="64" height="64" loading="lazy" decoding="async">
+          <div class="card-header-info">
+            <h2 class="card-title">Cylinder Text Animation</h2>
+            <div class="platform-badges">
+              <span class="platform-pill"><img src="logo/website.png" alt="" class="platform-icon">Web App</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Interactive 3D text animation that wraps custom typography around a rotating cylinder using pure CSS transforms.</p>
+        <div class="card-tags">
+          <span class="tag">#WebApp</span>
+          <span class="tag">#CSS3D</span>
+          <span class="tag">#Typography</span>
+        </div>
+        <div class="card-actions">
+          <div class="links-group">
+            <a class="link-btn" href="https://yudai-tiny-developer.github.io/cylinder_text/" target="_blank" rel="noopener noreferrer" title="Launch Web Application">
+              <img src="logo/website.png" alt="Web Application">
+            </a>
+            <a class="link-btn" href="https://github.com/yudai-tiny-developer/cylinder_text" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <img src="logo/github.png" alt="GitHub Repository">
+            </a>
+          </div>
+          <button type="button" class="btn-details">Details &amp; Shots</button>
+        </div>
+      </article>
+    </div>
+    <!-- No results message -->
+    <div id="no-results" class="no-results hidden">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+      </svg>
+      <h3>No matching utilities found</h3>
+      <p>Try searching for different keywords or select "All" from the filter tabs above.</p>
+    </div>
   </main>
-  <footer class="footer">
-    <p>&copy; 2022-2026 Simple and Tiny Utilities</p>
-    <p><a href="https://x.com/TinyDevelo83274" class="x">@TinyDevelo83274</a></p>
-  </footer>
-  <div id="modal" class="modal hidden">
+  <!-- Modal Dialog -->
+  <div id="tool-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-overlay"></div>
-    <div class="modal-box">
-      <button class="modal-close">×</button>
-      <h2 id="modal-title"></h2>
-      <div id="modal-images" class="modal-images"></div>
-      <p id="modal-desc"></p>
-      <div class="modal-links">
-        <a id="modal-chrome-store"><img class="icon-small" src="logo/chrome.png" />Chrome Web Store</a>
-        <a id="modal-firefox-addons"><img class="icon-small" src="logo/firefox.png" />Firefox Add-ons</a>
-        <a id="modal-website"><img class="icon-small" src="logo/website.png" />Website</a>
-        <a id="modal-github"><img class="icon-small" src="logo/github.png" />GitHub</a>
+    <div class="modal-container">
+      <header class="modal-header">
+        <div class="modal-header-content">
+          <img id="modal-icon" class="modal-icon" src="filter/128.png" alt="" width="56" height="56">
+          <div class="modal-title-wrap">
+            <h2 id="modal-title">Tool Title</h2>
+            <div id="modal-badges" class="platform-badges"></div>
+          </div>
+        </div>
+        <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+      </header>
+      <div class="modal-body">
+        <div id="modal-gallery" class="modal-gallery"></div>
+        <h3 class="modal-desc-heading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg> Overview &amp; Features
+        </h3>
+        <p id="modal-desc" class="modal-desc"></p>
       </div>
+      <footer class="modal-footer">
+        <div class="modal-actions">
+          <a id="modal-chrome" class="btn-cta btn-chrome" target="_blank" rel="noopener noreferrer">
+            <img src="logo/chrome.png" alt="" width="18" height="18"> Chrome Web Store </a>
+          <a id="modal-firefox" class="btn-cta btn-firefox" target="_blank" rel="noopener noreferrer">
+            <img src="logo/firefox.png" alt="" width="18" height="18"> Firefox Add-ons </a>
+          <a id="modal-website" class="btn-cta btn-website" target="_blank" rel="noopener noreferrer">
+            <img src="logo/website.png" alt="" width="18" height="18"> Launch Web App </a>
+          <a id="modal-github" class="btn-cta btn-github" target="_blank" rel="noopener noreferrer">
+            <img src="logo/github.png" alt="" width="18" height="18"> View on GitHub </a>
+        </div>
+        <button type="button" id="modal-share-btn" class="btn-share" title="Copy shareable link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg> Copy Link </button>
+      </footer>
     </div>
   </div>
-  <script src="script.js?v=2"></script>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Link copied to clipboard!</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://github.com/yudai-tiny-developer" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        <a href="https://x.com/TinyDevelo83274" target="_blank" rel="noopener noreferrer">X (@TinyDevelo83274)</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSflBYT48KTuGFCTopkhoABzeHD6pL18CCa_WzWhsXvn2rwq_Q/viewform" target="_blank" rel="noopener noreferrer">Anonymous Feedback Form</a>
+      </div>
+      <p>&copy; 2022-2026 Simple and Tiny Utilities by yudai-tiny-developer. All tools are open source and free of charge.</p>
+    </div>
+  </footer>
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>
