@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const cardCategory = card.dataset.category || "";
       const cardTitle = (card.dataset.title || "").toLowerCase();
       const cardDesc = (card.dataset.desc || "").toLowerCase();
+      const cardDetailsEl = card.querySelector(".tool-details-source");
+      const cardDetailsText = cardDetailsEl ? cardDetailsEl.textContent.toLowerCase() : "";
       const cardTags = (card.dataset.tags || "").toLowerCase();
 
       const matchesCategory =
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !query ||
         cardTitle.includes(query) ||
         cardDesc.includes(query) ||
+        cardDetailsText.includes(query) ||
         cardTags.includes(query);
 
       if (matchesCategory && matchesQuery) {
@@ -120,8 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
     modalIcon.src = card.dataset.icon;
     modalIcon.alt = `${card.dataset.title} Icon`;
 
-    // Format description (preserve line breaks)
-    modalDesc.textContent = card.dataset.desc.replace(/\\n/g, "\n");
+    // Prefer structured HTML from the card; fall back to data-desc as paragraphs
+    const detailsEl = card.querySelector(".tool-details-source");
+    if (detailsEl) {
+      modalDesc.innerHTML = detailsEl.innerHTML;
+    } else {
+      modalDesc.innerHTML = "";
+      const raw = (card.dataset.desc || "").replace(/\\n/g, "\n").trim();
+      raw.split(/\n\s*\n/).forEach((block) => {
+        const p = document.createElement("p");
+        p.textContent = block.replace(/\n/g, " ").trim();
+        modalDesc.appendChild(p);
+      });
+    }
 
     // Clear and build badges
     modalBadges.innerHTML = "";
